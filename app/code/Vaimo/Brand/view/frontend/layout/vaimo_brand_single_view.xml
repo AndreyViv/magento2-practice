@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Vaimo Brand
+*
+* @author Andrii Vivcharyk <andrii.vivcharyk@vaimo.com>
+* @package Vaimo_Brand
+* @copyright Copyright (c) 2021 Vaimo (http://www.vaimo.com)
+*/
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Vaimo Brand Single Page</title>
+    </head>
+    <body>
+        <referenceBlock name="page.main.title" remove="true"/>
+        <referenceContainer name="content">
+            <block class="Vaimo\Brand\Block\Brand"
+                   name="brand_single"
+                   template="Vaimo_Brand::brand.phtml"
+                   cacheable="true">
+            </block>
+        </referenceContainer>
+    </body>
+</page>

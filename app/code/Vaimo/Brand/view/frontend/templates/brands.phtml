@@ -1,0 +1,25 @@
+<?php
+/**
+ * @var $block Vaimo\Brand\Block\Brand
+ */
+$collection = $block->getBrands();
+?>
+<div class="container">
+    <div class="row">
+        <h1>Brand List</h1>
+    </div>
+    <?php foreach ($collection as $item): ?>
+        <div class="row">
+            <a href="http://andreyviv.test/brand/single/view/id/<?= $item->getId(); ?>">
+                <img src="<?= $item->getImageLink(); ?>"
+                     width="150"
+                     height="150"
+                     alt="<?= $item->getName(); ?>">
+                <div>
+                    <h3><?= $item->getName(); ?></h3>
+                    <p><?= $item->getDescription(); ?></p>
+                </div>
+            </a>
+        </div>
+    <?php endforeach; ?>
+</div>

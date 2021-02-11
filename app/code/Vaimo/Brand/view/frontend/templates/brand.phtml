@@ -1,0 +1,26 @@
+<?php
+/**
+ * @var $block Vaimo\Brand\Block\Brand
+ */
+$brand = $block->getBrand();
+?>
+<div class="container">
+    <?php if ($brand): ?>
+        <div class="row">
+            <h1><?= $brand->getName(); ?></h1>
+        </div>
+        <div class="row">
+            <img src="<?= $brand->getImageLink(); ?>"
+                 width="300"
+                 height="300"
+                 alt="<?= $brand->getName(); ?>">
+            <p><?= $brand->getDescription(); ?></p>
+        </div>
+    <?php else: ?>
+        <div class="row">
+            <h1>The brand does not exist</h1>
+        </div>
+    <?php endif; ?>
+</div>
+
+
