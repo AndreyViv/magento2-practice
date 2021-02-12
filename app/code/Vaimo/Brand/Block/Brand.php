@@ -19,7 +19,7 @@ class Brand extends Template
      */
     private $request;
     /**
-     * Product repository
+     * Brand repository
      * @var BrandRepositoryInterface
      */
     private $brandRepository;
@@ -35,7 +35,7 @@ class Brand extends Template
     private $sortOrderBuilder;
 
     /**
-     * BrandList constructor
+     * Brand constructor
      *
      * @param RequestInterface $request
      * @param BrandRepositoryInterface $brandRepository
