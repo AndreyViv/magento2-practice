@@ -1,0 +1,77 @@
+<?php
+/**
+ * @var $block Vaimo\Promotion\Block\CustomerAccount
+ */
+?>
+<?php if ($block->getChildHtml('cms_block')) : ?>
+    <div class="promotion-customer-main">
+        <?= $block->getChildHtml('cms_block'); ?>
+    </div>
+    <div class="promotion-customer-info">
+        <div class="promotion-customer-info-refer-form">
+            <form method="get" action="#">
+                <label id="label-link" for="link-container">
+                    <?= $block->escapeHtml(__('Refer friends with this unique link:')); ?>
+                </label>
+                <div id="link-container">
+                    <input type="url" id="link-input" value="<?= $block->getReferLink(); ?>" readonly="readonly">
+                    <button type="submit">
+                        <?= $block->escapeHtml(__('COPY')); ?>
+                    </button>
+                </div>
+                <label id="label-share" for="link-share-container">
+                    <?= $block->escapeHtml(__('Share your unique link ')); ?>
+                </label>
+                <div id="link-share-container">
+                    <div class="promotion-customer-info-refer-form-share-item">
+                        <a href="<?= $block->getFacebookLink(); ?>">
+                            <img src="<?= $block->getViewFileUrl('Vaimo_Promotion::images/facebookblack.jpg'); ?>"
+                                 alt="facebook">
+                        </a>
+                    </div>
+                    <div class="promotion-customer-info-refer-form-share-item">
+                        <a href="<?= $block->getTwitterLink(); ?>">
+                            <img src="<?= $block->getViewFileUrl('Vaimo_Promotion::images/twitterblack.jpg'); ?>"
+                                 alt="twitter">
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="promotion-customer-info-achievements">
+            <div class="promotion-customer-info-achievements-earned">
+                <div id="total-earned">
+                    <b><?= $block->escapeHtml(__($block->getTotalEarned())); ?></b>
+                </div>
+                <div id="text">
+                    <?= $block->escapeHtml(__('EARNED')); ?>
+                </div>
+            </div>
+            <div class="promotion-customer-info-achievements-list">
+                <label for="list">
+                    <b><?= $block->escapeHtml(__('Your Achievement')); ?></b>
+                </label>
+                <div id="list">
+                    <ul id="titles">
+                        <li><?= $block->escapeHtml(__('Referral Link Clicks')); ?></li>
+                        <li><?= $block->escapeHtml(__('Referral Pending')); ?></li>
+                        <li><?= $block->escapeHtml(__('Referral Approved')); ?></li>
+                    </ul>
+                    <ul id="values">
+                        <li><?= $block->getReferralLinkClicksCount(); ?></li>
+                        <li><?= $block->getReferralPendingCount(); ?></li>
+                        <li><?= $block->getReferralApprovedCount(); ?></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php else: ?>
+    <div class="promotion-customer-main">
+        <h1>
+            <?= $block->escapeHtml(__('No one active promotion now.')); ?>
+        </h1>
+    </div>
+<?php endif; ?>
+
+

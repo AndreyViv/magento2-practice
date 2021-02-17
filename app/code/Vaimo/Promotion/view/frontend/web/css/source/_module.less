@@ -1,0 +1,198 @@
+// /**
+//  * Vaimo Promotion
+//  *
+//  * @author Andrii Vivcharyk <andrii.vivcharyk@vaimo.com>
+//  * @package Vaimo_Promotion
+//  * @copyright Copyright (c) 2021 Vaimo (http://www.vaimo.com)
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+@info_elements_width: 49%;
+@ul_style: none;
+@ul_padding: 0;
+@default_margin_top: 15px;
+@default_margin_left_right: 7.5px;
+@default_border: 2px solid #e6e6e6;
+@checkout_additional_item_horizontal_margin: 25px;
+
+//
+//  Common
+//  _____________________________________________
+
+.promotion-customer-main {
+    border: @default_border;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.promotion-customer-info {
+    display: flex;
+    height: 300px;
+    margin-top: @default_margin_top;
+
+    &-refer-form {
+        display: flex;
+        width: @info_elements_width;
+        border: @default_border;
+        margin-right: @default_margin_left_right;
+
+        &-share-item {
+            padding-right: 4px;
+            width: 40px;
+            height: 40px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            width: 80%;
+            height: 80%;
+
+            #link-container {
+                display: flex;
+                padding-top: 10px;
+
+                input {
+                    margin-right: 5px;
+                    border-radius: 3px;
+                }
+
+                button {
+                    box-shadow: none;
+                    color: white;
+                    background-color: black;
+                    border: 1px solid black;
+                    transition-duration: 0.4s;
+                }
+
+                button:hover {
+                    background-color: #3c3838;
+                }
+            }
+
+            #label-share {
+                padding-top: 20px;
+            }
+
+            #link-share-container {
+                padding-top: 15px;
+                display: flex;
+
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+        }
+    }
+
+    &-achievements {
+        width: @info_elements_width;
+        margin-left: @default_margin_left_right;
+
+        &-earned {
+            background: #0A246A;
+            color: white;
+            height: 30%;
+            display: flex;
+            align-items: center;
+            padding: 0 15%;
+
+            #total-earned {
+                width: @info_elements_width;
+                text-align: left;
+                font-size: x-large;
+            }
+
+            #text {
+                width: @info_elements_width;
+                text-align: right;
+            }
+        }
+
+        &-list {
+            border: @default_border;
+            margin-top: @default_margin_top;
+            padding: 5%;
+
+            #list {
+                margin-top: 2%;
+                display: flex;
+                justify-content: space-between;
+
+                #titles {
+                    list-style-type: @ul_style;
+                    padding: @ul_padding;
+                }
+
+                #values {
+                    list-style-type: @ul_style;
+                    padding: @ul_padding;
+                }
+            }
+        }
+    }
+}
+
+.promotion-checkout-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        height: 50px;
+        width: 50px;
+    }
+
+    #success-text {
+        text-align: center;
+
+        h2 {
+            font-weight: 600;
+        }
+
+        b {
+            border-bottom: 1px solid black;
+        }
+    }
+}
+
+.promotion-checkout-additional {
+    margin-top: 30px;
+    border-top: @default_border;
+    display: flex;
+    justify-content: center;
+    padding-top: 29px;
+
+    &-item {
+        width: 300px;
+        height: 250px;
+        padding: 20px 40px 10px 40px;
+        box-shadow: 0px 1px 10px -5px;
+        font-size: 18px;
+    }
+
+    #order-detail {
+        margin-right: @checkout_additional_item_horizontal_margin;
+    }
+
+    #cms-block {
+        margin-left: @checkout_additional_item_horizontal_margin;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover {
+        color: #3c3c3c;
+    }
+}

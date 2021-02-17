@@ -1,0 +1,30 @@
+<?php
+/**
+ * @var $block Magento\Checkout\Block\Onepage\Success
+ */
+?>
+<?php if ($block->getOrderId()): ?>
+    <div class="promotion-checkout-success">
+        <img src="<?= $block->getViewFileUrl('Vaimo_Promotion::images/success.png'); ?>"
+             alt="success">
+        <div id="success-text">
+            <h2><?= $block->escapeHtml(__('ORDER CONFIRMATION')); ?></h2>
+            <p><?= $block->escapeHtml(__('Thank you for shopping')); ?></p>
+            <p>
+                <?= $block->escapeHtml(__('Order Number: ')); ?>
+                <b><?= $block->getOrderId(); ?></b>
+            </p>
+        </div>
+    </div>
+    <div class="promotion-checkout-additional">
+        <div class="promotion-checkout-additional-item" id="order-detail">
+            <?= $block->getChildHtml('promotion_checkout_order_details'); ?>
+        </div>
+        <a href="<?= $block->getUrl('promotion/customer'); ?>">
+            <div class="promotion-checkout-additional-item" id="cms-block">
+                <?= $block->getChildHtml('cms_block'); ?>
+            </div>
+        </a>
+    </div>
+<?php endif; ?>
+
