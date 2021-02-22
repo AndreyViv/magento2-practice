@@ -3,19 +3,42 @@
  * @var $block Vaimo\Promotion\Block\CustomerAccount
  */
 ?>
+<script type="text/x-magento-init">
+    {
+        "#referral-form": {
+            "Vaimo_Promotion/js/referral": {
+                "referBase": "<?= $block->getReferBase(); ?>"
+            }
+        }
+    }
+
+
+</script>
 <?php if ($block->getChildHtml('cms_block')) : ?>
     <div class="promotion-customer-main">
         <?= $block->getChildHtml('cms_block'); ?>
     </div>
     <div class="promotion-customer-info">
         <div class="promotion-customer-info-refer-form">
-            <form method="get" action="#">
+            <form id="referral-form" method="get" action="#">
                 <label id="label-link" for="link-container">
                     <?= $block->escapeHtml(__('Refer friends with this unique link:')); ?>
                 </label>
                 <div id="link-container">
-                    <input type="url" id="link-input" value="<?= $block->getReferLink(); ?>" readonly="readonly">
-                    <button type="submit">
+                    <input type="url" id="link-input" readonly="readonly"
+                           placeholder="<?= $block->escapeHtml(__('Tap GENERATE to create link')); ?>">
+                    <button class="link-button" id="generate-link-button" type="button">
+                        <?= $block->escapeHtml(__('GENERATE')); ?>
+                    </button>
+                    <button class="link-button hidden-button" id="spinner-link-button" type="button">
+                        <img src="<?= $block->getViewFileUrl('Vaimo_Promotion::images/spinner.gif'); ?>"
+                             id="spinner-gif"
+                             alt="spinner">
+                    </button>
+                    <button class="link-button hidden-button" id="done-link-button" type="button">
+                        <?= $block->escapeHtml(__('DONE!')); ?>
+                    </button>
+                    <button class="link-button hidden-button" id="copy-link-button" type="button">
                         <?= $block->escapeHtml(__('COPY')); ?>
                     </button>
                 </div>

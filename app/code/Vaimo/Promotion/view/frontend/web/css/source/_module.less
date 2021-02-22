@@ -59,12 +59,12 @@
                 display: flex;
                 padding-top: 10px;
 
-                input {
-                    margin-right: 5px;
-                    border-radius: 3px;
+                .hidden-button {
+                    display: none;
                 }
 
-                button {
+                .link-button {
+                    width: 150px;
                     box-shadow: none;
                     color: white;
                     background-color: black;
@@ -72,8 +72,21 @@
                     transition-duration: 0.4s;
                 }
 
-                button:hover {
+                button.link-button:hover {
                     background-color: #3c3838;
+                }
+
+                button.link-button:active {
+                    background-color: #5f5f60;
+                }
+
+                #link-input {
+                    margin-right: 5px;
+                    border-radius: 3px;
+                }
+
+                #spinner-gif {
+                    width: 13px;
                 }
             }
 

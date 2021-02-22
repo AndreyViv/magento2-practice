@@ -9,9 +9,11 @@ class CustomerAccount extends Template
     /**
      * @return string
      */
-    public function getReferLink()
+    public function getReferBase()
     {
-        return 'http://andreyviv.test/promotion/customer/refer/link/jHwwb234';
+        $userId = 44;
+
+        return 'http://andreyviv.test/promotion/customer/id/' . $userId . '/refer/link/';
     }
 
     /**
