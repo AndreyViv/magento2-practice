@@ -21,6 +21,17 @@
                    name="brand_test"
                    template="Vaimo_Brand::test.phtml"
                    cacheable="true">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="text"
+                              translate="true"
+                              xsi:type="string">text from layout
+                        </item>
+                        <item name="number"
+                              xsi:type="number">420
+                        </item>
+                    </argument>
+                </arguments>
             </block>
         </referenceContainer>
     </body>

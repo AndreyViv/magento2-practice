@@ -1,8 +1,17 @@
 <?php
 /**
- * @var $this Vaimo\Brand\Block\Test
+ * @var $block Vaimo\Brand\Block\Test
  */
 ?>
-<h1>
-    <?php echo $this->getText(); ?>
-</h1>
+<script type="text/x-magento-init">
+    {
+        "#test-element": {
+            "Vaimo_Brand/js/fortest": <?= $block->getJsLayout(); ?>
+        }
+    }
+
+</script>
+<div id="test-element">
+    <p><?= $block->escapeHtml(__('Script test!')) ?></p>
+</div>
+
