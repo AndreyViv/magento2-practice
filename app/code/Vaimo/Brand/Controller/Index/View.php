@@ -1,6 +1,10 @@
-<?php /**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
+<?php
+/**
+ * Vaimo Brand
+ *
+ * @author Andrii Vivcharyk <andrii.vivcharyk@vaimo.com>
+ * @package Vaimo_Brand
+ * @copyright Copyright (c) 2021 Vaimo (http://www.vaimo.com)
  */
 
 namespace Vaimo\Brand\Controller\Index;
