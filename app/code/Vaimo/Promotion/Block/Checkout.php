@@ -1,11 +1,19 @@
 <?php
+/**
+ * Vaimo Promotion
+ *
+ * @author Andrii Vivcharyk <andrii.vivcharyk@vaimo.com>
+ * @package Vaimo_Promotion
+ * @copyright Copyright (c) 2021 Vaimo (http://www.vaimo.com)
+ */
 
 namespace Vaimo\Promotion\Block;
 
-use Magento\Framework\View\Element\Template;
-
-class Checkout extends Template
+class Checkout extends Promotion
 {
+    /**
+     * @return string
+     */
     public function getOrderDetails()
     {
         $result = 'Your order will be delivered withing 1-2 days. ';

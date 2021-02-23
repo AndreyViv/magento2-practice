@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Vaimo Promotion
+*
+* @author Andrii Vivcharyk <andrii.vivcharyk@vaimo.com>
+* @package Vaimo_Promotion
+* @copyright Copyright (c) 2021 Vaimo (http://www.vaimo.com)
+*/
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <promotion_config>
+            <main_config>
+                <status>1</status>
+            </main_config>
+        </promotion_config>
+    </default>
+</config>

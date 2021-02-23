@@ -1,5 +1,12 @@
 <?php
 /**
+ * Vaimo Promotion
+ *
+ * @author Andrii Vivcharyk <andrii.vivcharyk@vaimo.com>
+ * @package Vaimo_Promotion
+ * @copyright Copyright (c) 2021 Vaimo (http://www.vaimo.com)
+ */
+/**
  * @var $block Vaimo\Promotion\Block\CustomerAccount
  */
 ?>
@@ -13,8 +20,9 @@
     }
 
 
+
 </script>
-<?php if ($block->getChildHtml('cms_block')) : ?>
+<?php if ($block->isPromotionActive()) : ?>
     <div class="promotion-customer-main">
         <?= $block->getChildHtml('cms_block'); ?>
     </div>
